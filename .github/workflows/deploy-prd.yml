@@ -37,8 +37,8 @@ jobs:
               }
             }
   acceptance-test:
-    needs: deploy
+    needs: deploy-prd
     runs-on: ubuntu-20.04
     steps:
       - name: Acceptance Test
-        run: curl http://bookinfo.${{ env.ENV_NAME }}.opsta.net/student89/ratings/health | grep "Ratings is working"
+        run: curl http://bookinfo.opsta.net/student89/ratings/health | grep "Ratings is working"
